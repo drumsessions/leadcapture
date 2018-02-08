@@ -12,13 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
-
-        User::create([
-            'name'=>'Carlos Gabaldon',
-            'email'=>'carlos@boldleads.com',
-            'password'=>bcrypt('carlos_gabaldon_2018'),
-            'is_admin'=>1
+        $this->call([
+            UsersTableSeeder::class,
+            LeadsTableSeeder::class,
         ]);
     }
 
