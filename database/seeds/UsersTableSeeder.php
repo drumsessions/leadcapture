@@ -21,5 +21,12 @@ class UsersTableSeeder extends Seeder
             'password'=>bcrypt('carlos_gabaldon_2018'),
             'is_admin'=>1
         ]);
+
+        User::create([
+            'name'=>'Rene Bustamante',
+            'email'=>'rbustamante@boldleads.com',
+            'password'=>bcrypt('password'),
+            'is_admin'=>0
+        ]);
     }
 }

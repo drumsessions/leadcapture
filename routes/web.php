@@ -11,6 +11,8 @@
 |
 */
 
+use App\Lead;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', function() {
+    $leads = Lead::all();
+    return view('admin.index', ['leads'=>$leads]);
+})->middleware('admin');
